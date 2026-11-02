@@ -1,0 +1,270 @@
+[gd_scene load_steps=17 format=3 uid="uid://0cpkdk1a3krw"]
+
+[ext_resource type="FontFile" uid="uid://dxxddb5c1lot" path="res://scenes/main/sprites/font.ttf" id="1_d3e5d"]
+[ext_resource type="Script" uid="uid://dffnf5b3w6pev" path="res://scenes/main/credits/credits.gd" id="1_dfirx"]
+[ext_resource type="FontFile" uid="uid://dchqgn24jdnma" path="res://scenes/main/sprites/credits_font.ttf" id="4_83sub"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wg7h"]
+bg_color = Color(0.290196, 0, 0.556863, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 2.0
+expand_margin_top = 4.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_ey2a4"]
+default_font = ExtResource("1_d3e5d")
+Button/font_sizes/font_size = 24
+Button/styles/normal = SubResource("StyleBoxFlat_4wg7h")
+TextEdit/colors/font_readonly_color = Color(0.87451, 0.87451, 0.87451, 1)
+TextEdit/colors/font_selected_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83sub"]
+content_margin_right = 10.0
+bg_color = Color(0, 0, 0, 0.45490196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_dfirx"]
+font = ExtResource("1_d3e5d")
+font_size = 21
+outline_size = 8
+outline_color = Color(0.172549, 0.0745098, 0.321569, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1gry1"]
+font = ExtResource("4_83sub")
+outline_size = 3
+outline_color = Color(0.172549, 0.0745098, 0.321569, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m5txb"]
+font = ExtResource("4_83sub")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfirx"]
+bg_color = Color(0.35699996, 0, 0.63, 1)
+border_width_left = 3
+border_width_top = 4
+border_width_right = 3
+border_width_bottom = 4
+border_color = Color(0.5666666, 0, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dfirx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_83sub"]
+font = ExtResource("1_d3e5d")
+font_size = 28
+font_color = Color(1, 0.8505, 0.31, 1)
+outline_size = 19
+outline_color = Color(0.5621144, 0.4807282, 0.18334827, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v80bo"]
+font = ExtResource("1_d3e5d")
+font_size = 28
+font_color = Color(0.75, 0.75, 0.75, 1)
+outline_size = 19
+outline_color = Color(0.57, 0.57, 0.57, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kdsa2"]
+font = ExtResource("1_d3e5d")
+font_size = 28
+font_color = Color(0.88, 0.60485333, 0.2904, 1)
+outline_size = 19
+outline_color = Color(0.44, 0.30242667, 0.1452, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x52mv"]
+font = ExtResource("1_d3e5d")
+font_size = 32
+outline_size = 12
+outline_color = Color(0.172549, 0.0745098, 0.321569, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3e5d"]
+line_spacing = 0.0
+font = ExtResource("4_83sub")
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dfirx")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.235294, 0, 0.498039, 0.396078)
+
+[node name="BackButton" type="Button" parent="."]
+top_level = true
+layout_mode = 1
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 43.0
+offset_bottom = 47.0
+theme = SubResource("Theme_ey2a4")
+text = "<"
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 100
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Margin"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Games" type="VBoxContainer" parent="Margin/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Control" type="Control" parent="Margin/ScrollContainer/Games"]
+layout_mode = 2
+
+[node name="Game" type="PanelContainer" parent="Margin/ScrollContainer/Games"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_83sub")
+
+[node name="Margin" type="MarginContainer" parent="Margin/ScrollContainer/Games/Game"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Info" type="HBoxContainer" parent="Margin/ScrollContainer/Games/Game/Margin"]
+layout_mode = 2
+alignment = 1
+
+[node name="Text" type="VBoxContainer" parent="Margin/ScrollContainer/Games/Game/Margin/Info"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Margin/ScrollContainer/Games/Game/Margin/Info/Text"]
+layout_mode = 2
+text = "Title"
+label_settings = SubResource("LabelSettings_dfirx")
+
+[node name="Person" type="Label" parent="Margin/ScrollContainer/Games/Game/Margin/Info/Text"]
+layout_mode = 2
+text = "by person"
+label_settings = SubResource("LabelSettings_1gry1")
+
+[node name="Description" type="Label" parent="Margin/ScrollContainer/Games/Game/Margin/Info/Text"]
+custom_minimum_size = Vector2(217, 0)
+layout_mode = 2
+text = "This game is about all sorts of things. Blah blah blah!"
+label_settings = SubResource("LabelSettings_m5txb")
+autowrap_mode = 3
+
+[node name="Preview" type="VBoxContainer" parent="Margin/ScrollContainer/Games/Game/Margin/Info"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Margin/ScrollContainer/Games/Game/Margin/Info/Preview"]
+custom_minimum_size = Vector2(229, 136)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dfirx")
+
+[node name="Image" type="TextureRect" parent="Margin/ScrollContainer/Games/Game/Margin/Info/Preview/Panel"]
+custom_minimum_size = Vector2(213, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.5
+offset_top = -60.0
+offset_right = 106.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_dfirx")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="Margin/ScrollContainer/Games/Game/Margin/Info/Preview"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3e5d")
+text = "PLAY"
+
+[node name="SubViewport" type="SubViewport" parent="Margin/ScrollContainer/Games/Game/Margin/Info/Preview"]
+canvas_item_default_texture_filter = 0
+size = Vector2i(640, 360)
+render_target_update_mode = 1
+
+[node name="1st" type="Label" parent="Margin/ScrollContainer/Games/Game"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "1st Place"
+label_settings = SubResource("LabelSettings_83sub")
+horizontal_alignment = 1
+
+[node name="2nd" type="Label" parent="Margin/ScrollContainer/Games/Game"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "2nd Place"
+label_settings = SubResource("LabelSettings_v80bo")
+
+[node name="3rd" type="Label" parent="Margin/ScrollContainer/Games/Game"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "3rd Place"
+label_settings = SubResource("LabelSettings_kdsa2")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -143.0
+offset_top = 13.0
+offset_right = 143.0
+offset_bottom = 75.0
+grow_horizontal = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_x52mv")
+horizontal_alignment = 1
+
+[node name="Thank" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -251.0
+offset_top = 53.0
+offset_right = 237.0
+offset_bottom = 115.0
+grow_horizontal = 2
+text = "Thank you so much to everyone who participated!"
+label_settings = SubResource("LabelSettings_d3e5d")
+horizontal_alignment = 1

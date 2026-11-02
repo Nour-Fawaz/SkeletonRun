@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://vsa81qpfer44"]
+
+[ext_resource type="Script" uid="uid://c4wrpcy2ry33o" path="res://microgames/SkeletonRun/PlayableCharacter/playable_character.gd" id="1_8l36x"]
+[ext_resource type="Texture2D" uid="uid://f4a4xhpmm4rc" path="res://microgames/SkeletonRun/Assets/PlayableCharacter.PNG" id="2_38kx3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnhtj"]
+size = Vector2(25, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo5lp"]
+atlas = ExtResource("2_38kx3")
+region = Rect2(0, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y62m4"]
+atlas = ExtResource("2_38kx3")
+region = Rect2(1984, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jny1q"]
+atlas = ExtResource("2_38kx3")
+region = Rect2(0, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnhtj"]
+atlas = ExtResource("2_38kx3")
+region = Rect2(1984, 0, 1984, 1984)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vave0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bo5lp")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y62m4")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jny1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnhtj")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="PC_Body" type="CharacterBody2D" unique_id=1380460385]
+script = ExtResource("1_8l36x")
+
+[node name="PC_CollisionShape" type="CollisionShape2D" parent="." unique_id=669645826]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_rnhtj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1587636208]
+scale = Vector2(0.025, 0.025)
+sprite_frames = SubResource("SpriteFrames_vave0")
+animation = &"walk"
+autoplay = "idle"
+speed_scale = 3.0

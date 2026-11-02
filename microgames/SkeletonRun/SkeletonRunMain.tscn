@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dnlqqemy04dyd"]
+
+[ext_resource type="Script" uid="uid://dhk27xm1uaqs8" path="res://microgames/SkeletonRun/skeleton_run_main.gd" id="1_ksbh0"]
+[ext_resource type="PackedScene" uid="uid://ddhoio73023ba" path="res://scenes/main/bomb_timer/bomb_timer.tscn" id="1_v0hri"]
+[ext_resource type="Texture2D" uid="uid://dporqlie01e6l" path="res://microgames/SkeletonRun/Assets/Background.PNG" id="2_rnhtj"]
+[ext_resource type="PackedScene" uid="uid://vsa81qpfer44" path="res://microgames/SkeletonRun/PlayableCharacter/PlayableCharacter.tscn" id="4_jny1q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vave0"]
+size = Vector2(18.342855, 28)
+
+[node name="SkeletonRunMain" type="Node2D" unique_id=679066593 node_paths=PackedStringArray("bomb_timer")]
+script = ExtResource("1_ksbh0")
+game_name = "SkeletonRun"
+creator_name = "Nour Fawaz"
+game_description = "Run from the skeleton "
+game_length = 10
+bomb_timer = NodePath("BombTimer")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1304183767]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=699872812]
+offset_right = 40.0
+offset_bottom = 40.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(300, 160)
+offset_transform_scale = Vector2(16.5, 16.5)
+mouse_filter = 2
+texture = ExtResource("2_rnhtj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BombTimer" parent="." unique_id=411462138 instance=ExtResource("1_v0hri")]
+position = Vector2(70, 350)
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1047420738]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1543439283]
+position = Vector2(318, 321)
+scale = Vector2(35, 2)
+shape = SubResource("RectangleShape2D_vave0")
+
+[node name="PC_Body" parent="." unique_id=1380460385 instance=ExtResource("4_jny1q")]
+position = Vector2(304, 268)
