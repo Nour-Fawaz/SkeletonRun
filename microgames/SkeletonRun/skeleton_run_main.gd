@@ -6,9 +6,6 @@ func _ready() -> void:
 	super()
 	enemy.player_enemy_collision.connect(_on_skeleton_body_player_enemy_collision)
 	
-	
-	 
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -70,5 +70,3 @@ shape = SubResource("RectangleShape2D_rgvo0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" unique_id=830810360]
 position = Vector2(315.5, -10)
 shape = SubResource("RectangleShape2D_qf5ci")
-
-[connection signal="player_enemy_collision" from="Skeleton_Body" to="." method="_on_skeleton_body_player_enemy_collision"]
