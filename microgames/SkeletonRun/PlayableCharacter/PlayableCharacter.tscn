@@ -54,6 +54,7 @@ animations = [{
 
 [node name="PC_Body" type="CharacterBody2D" unique_id=1380460385]
 script = ExtResource("1_8l36x")
+metadata/_edit_group_ = true
 
 [node name="PC_CollisionShape" type="CollisionShape2D" parent="." unique_id=669645826]
 position = Vector2(-0.5, 1)

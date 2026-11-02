@@ -4,9 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://ddhoio73023ba" path="res://scenes/main/bomb_timer/bomb_timer.tscn" id="1_v0hri"]
 [ext_resource type="Texture2D" uid="uid://dporqlie01e6l" path="res://microgames/SkeletonRun/Assets/Background.PNG" id="2_rnhtj"]
 [ext_resource type="PackedScene" uid="uid://vsa81qpfer44" path="res://microgames/SkeletonRun/PlayableCharacter/PlayableCharacter.tscn" id="4_jny1q"]
+[ext_resource type="PackedScene" uid="uid://drlyplm280yei" path="res://microgames/SkeletonRun/Skeleton/SkeletonCharacter.tscn" id="5_rnhtj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vave0"]
 size = Vector2(18.342855, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgvo0"]
+size = Vector2(20, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf5ci"]
+size = Vector2(651, 20)
 
 [node name="SkeletonRunMain" type="Node2D" unique_id=679066593 node_paths=PackedStringArray("bomb_timer")]
 script = ExtResource("1_ksbh0")
@@ -34,11 +41,31 @@ stretch_mode = 5
 position = Vector2(70, 350)
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=1047420738]
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1543439283]
 position = Vector2(318, 321)
 scale = Vector2(35, 2)
 shape = SubResource("RectangleShape2D_vave0")
 
-[node name="PC_Body" parent="." unique_id=1380460385 instance=ExtResource("4_jny1q")]
+[node name="PC_Body" parent="." unique_id=1380460385 groups=["FollowPlayerAI"] instance=ExtResource("4_jny1q")]
 position = Vector2(304, 268)
+
+[node name="Skeleton_Body" parent="." unique_id=294971271 groups=["FollowPlayerAI"] instance=ExtResource("5_rnhtj")]
+position = Vector2(100, 268)
+SPEED = 200.0
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1674640483]
+metadata/_edit_group_ = true
+
+[node name="RightWall" type="CollisionShape2D" parent="Walls" unique_id=496494060]
+position = Vector2(650, 144)
+shape = SubResource("RectangleShape2D_rgvo0")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls" unique_id=1834923777]
+position = Vector2(-10, 144)
+shape = SubResource("RectangleShape2D_rgvo0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" unique_id=830810360]
+position = Vector2(315.5, -10)
+shape = SubResource("RectangleShape2D_qf5ci")

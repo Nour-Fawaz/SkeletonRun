@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://drlyplm280yei"]
+
+[ext_resource type="Script" uid="uid://fb4nff8kyxlh" path="res://microgames/SkeletonRun/Skeleton/skeleton_character.gd" id="1_6xj1c"]
+[ext_resource type="Texture2D" uid="uid://cexibqn0ej7bi" path="res://microgames/SkeletonRun/Assets/SkeletonCharacter.PNG" id="1_lcw36"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xj1c"]
+atlas = ExtResource("1_lcw36")
+region = Rect2(0, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyd7v"]
+atlas = ExtResource("1_lcw36")
+region = Rect2(1984, 0, 1984, 1984)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rgvo0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xj1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyd7v")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vave0"]
+size = Vector2(40, 44)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=294971271]
+script = ExtResource("1_6xj1c")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=796541366]
+scale = Vector2(0.025, 0.025)
+sprite_frames = SubResource("SpriteFrames_rgvo0")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1916983345]
+position = Vector2(-6, 3)
+shape = SubResource("RectangleShape2D_vave0")
