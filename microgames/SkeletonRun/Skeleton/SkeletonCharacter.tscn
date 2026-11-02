@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fb4nff8kyxlh" path="res://microgames/SkeletonRun/Skeleton/skeleton_character.gd" id="1_6xj1c"]
 [ext_resource type="Texture2D" uid="uid://cexibqn0ej7bi" path="res://microgames/SkeletonRun/Assets/SkeletonCharacter.PNG" id="1_lcw36"]
+[ext_resource type="Texture2D" uid="uid://olc1gqsm5loj" path="res://icon.png" id="2_wyd7v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6xj1c"]
 atlas = ExtResource("1_lcw36")
@@ -13,6 +14,14 @@ region = Rect2(1984, 0, 1984, 1984)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rgvo0"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wyd7v")
+}],
+"loop": 1,
+"name": &"jumpscare",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6xj1c")
@@ -28,6 +37,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vave0"]
 size = Vector2(40, 44)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgvo0"]
+size = Vector2(42, 44)
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=294971271]
 script = ExtResource("1_6xj1c")
 metadata/_edit_group_ = true
@@ -36,7 +48,18 @@ metadata/_edit_group_ = true
 scale = Vector2(0.025, 0.025)
 sprite_frames = SubResource("SpriteFrames_rgvo0")
 animation = &"walk"
+autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1916983345]
 position = Vector2(-6, 3)
 shape = SubResource("RectangleShape2D_vave0")
+
+[node name="EnemyArea" type="Area2D" parent="." unique_id=469531278]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea" unique_id=177065102]
+position = Vector2(-5, 3)
+shape = SubResource("RectangleShape2D_rgvo0")
+
+[connection signal="body_entered" from="EnemyArea" to="." method="_on_enemy_area_body_entered"]

@@ -50,6 +50,7 @@ shape = SubResource("RectangleShape2D_vave0")
 
 [node name="PC_Body" parent="." unique_id=1380460385 groups=["FollowPlayerAI"] instance=ExtResource("4_jny1q")]
 position = Vector2(304, 268)
+collision_layer = 2
 
 [node name="Skeleton_Body" parent="." unique_id=294971271 groups=["FollowPlayerAI"] instance=ExtResource("5_rnhtj")]
 position = Vector2(100, 268)
@@ -69,3 +70,5 @@ shape = SubResource("RectangleShape2D_rgvo0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" unique_id=830810360]
 position = Vector2(315.5, -10)
 shape = SubResource("RectangleShape2D_qf5ci")
+
+[connection signal="player_enemy_collision" from="Skeleton_Body" to="." method="_on_skeleton_body_player_enemy_collision"]

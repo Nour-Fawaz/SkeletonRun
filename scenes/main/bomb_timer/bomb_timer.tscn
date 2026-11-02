@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ddhoio73023ba"]
+[gd_scene format=3 uid="uid://ddhoio73023ba"]
 
 [ext_resource type="Script" uid="uid://cbcsd3uwe1ms7" path="res://scenes/main/bomb_timer/bomb_timer.gd" id="1_2j5o5"]
 [ext_resource type="Texture2D" uid="uid://cg8dqmgk5ksf5" path="res://scenes/main/bomb_timer/sprites/bomb_explode.png" id="2_tmimy"]
@@ -19,7 +19,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_ow7td")
 }],
-"loop": true,
+"loop": 1,
 "name": &"head1",
 "speed": 5.0
 }, {
@@ -27,7 +27,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_ahofm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"head2",
 "speed": 5.0
 }]
@@ -41,7 +41,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_c23tn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 15.0
 }]
@@ -52,7 +52,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_2u1c3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"1",
 "speed": 5.0
 }, {
@@ -60,7 +60,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_f44ri")
 }],
-"loop": true,
+"loop": 1,
 "name": &"2",
 "speed": 5.0
 }, {
@@ -68,30 +68,30 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_5xxfv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"3",
 "speed": 5.0
 }, {
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="BombTimer" type="Node2D"]
+[node name="BombTimer" type="Node2D" unique_id=991434359]
 z_index = 100
 script = ExtResource("1_2j5o5")
 
-[node name="TickTimer" type="Timer" parent="."]
+[node name="TickTimer" type="Timer" parent="." unique_id=2017415710]
 wait_time = 0.5
 
-[node name="BombExplode" type="Sprite2D" parent="."]
+[node name="BombExplode" type="Sprite2D" parent="." unique_id=2055766642]
 texture_filter = 1
 position = Vector2(-22, -39)
 scale = Vector2(2, 2)
 texture = ExtResource("2_tmimy")
 
-[node name="BombLine" type="Line2D" parent="."]
+[node name="BombLine" type="Line2D" parent="." unique_id=1602634146]
 texture_filter = 1
 position = Vector2(-2.57627, 1)
 points = PackedVector2Array(0, 0, 587.576, 0)
@@ -100,14 +100,14 @@ texture = ExtResource("3_4et84")
 texture_mode = 1
 joint_mode = 1
 
-[node name="BombHead" type="AnimatedSprite2D" parent="."]
+[node name="BombHead" type="AnimatedSprite2D" parent="." unique_id=488681045]
 texture_filter = 1
 position = Vector2(-31, -12)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_7vrph")
 animation = &"head1"
 
-[node name="BombFlare" type="AnimatedSprite2D" parent="."]
+[node name="BombFlare" type="AnimatedSprite2D" parent="." unique_id=1866537879]
 texture_filter = 1
 position = Vector2(599, -8)
 scale = Vector2(2, 2)
@@ -115,17 +115,17 @@ sprite_frames = SubResource("SpriteFrames_g7654")
 autoplay = "default"
 frame_progress = 0.287858
 
-[node name="Number" type="AnimatedSprite2D" parent="."]
+[node name="Number" type="AnimatedSprite2D" parent="." unique_id=271899373]
 texture_filter = 1
 position = Vector2(-50, -55)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1crco")
 
-[node name="Tick" type="AudioStreamPlayer" parent="."]
+[node name="Tick" type="AudioStreamPlayer" parent="." unique_id=1652482567]
 stream = ExtResource("11_lo4tt")
 volume_db = -5.0
 
-[node name="Tock" type="AudioStreamPlayer" parent="."]
+[node name="Tock" type="AudioStreamPlayer" parent="." unique_id=399193650]
 stream = ExtResource("12_hrw6x")
 volume_db = -5.0
 

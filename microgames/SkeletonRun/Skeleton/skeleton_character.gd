@@ -9,6 +9,7 @@ var normal_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var player = get_tree().get_first_node_in_group("FollowPlayerAI") # reference of player
 
+signal player_enemy_collision()
 
 func _physics_process(delta: float) -> void:
 	
@@ -25,6 +26,12 @@ func _physics_process(delta: float) -> void:
 	if velocity.y > 0: # speed up descent
 		current_gravity = normal_gravity * gravity_amplifier
 	velocity.y += current_gravity * delta
-	
-
 	move_and_slide()
+
+
+func _on_enemy_area_body_entered(body: Node2D) -> void:
+	# pause bomb?
+	# create jump scare
+	player_enemy_collision.emit() # emit signal that there was a player and enemy collision
+	#skeleton_animated_sprite.play("jumpscare")
+	
