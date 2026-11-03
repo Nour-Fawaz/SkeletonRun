@@ -5,7 +5,7 @@ extends CharacterBody2D
 const JUMP_VELOCITY = -400.0
 var normal_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var gravity_amplifier = 10.0
-@onready var skeleton_animated_sprite = $AnimatedSprite2D
+@onready var skeleton_animated_sprite = $Skeleton_AnimatedSprite
 
 @onready var player = get_tree().get_first_node_in_group("FollowPlayerAI") # reference of player
 
@@ -32,6 +32,7 @@ func _physics_process(delta: float) -> void:
 func _on_enemy_area_body_entered(body: Node2D) -> void:
 	# pause bomb?
 	# create jump scare
+	skeleton_animated_sprite.play("jumpscare")
 	player_enemy_collision.emit() # emit signal that there was a player and enemy collision
 	#skeleton_animated_sprite.play("jumpscare")
 	
