@@ -36,24 +36,24 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vave0"]
-size = Vector2(40, 44)
+size = Vector2(31, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgvo0"]
-size = Vector2(42, 44)
+size = Vector2(33, 35)
 
 [node name="Skeleton_Body" type="CharacterBody2D" unique_id=294971271]
 script = ExtResource("1_6xj1c")
 metadata/_edit_group_ = true
 
 [node name="Skeleton_AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=796541366]
-scale = Vector2(0.025, 0.025)
+scale = Vector2(0.02, 0.02)
 sprite_frames = SubResource("SpriteFrames_rgvo0")
-animation = &"jumpscare"
+animation = &"walk"
 autoplay = "walk"
 script = ExtResource("4_rrruy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1916983345]
-position = Vector2(-6, 3)
+position = Vector2(-4.5, 2.5)
 shape = SubResource("RectangleShape2D_vave0")
 
 [node name="EnemyArea" type="Area2D" parent="." unique_id=469531278]
@@ -61,7 +61,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea" unique_id=177065102]
-position = Vector2(-5, 3)
+position = Vector2(-3.5, 2.5)
 shape = SubResource("RectangleShape2D_rgvo0")
 
 [connection signal="body_entered" from="EnemyArea" to="." method="_on_enemy_area_body_entered"]

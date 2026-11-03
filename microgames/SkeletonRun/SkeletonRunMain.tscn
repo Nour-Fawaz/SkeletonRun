@@ -21,6 +21,7 @@ game_name = "SkeletonRun"
 creator_name = "Nour Fawaz"
 game_description = "Run from the skeleton "
 game_length = 10
+message = "RUN!"
 bomb_timer = NodePath("BombTimer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1304183767]
