@@ -17,4 +17,6 @@ func _process(delta: float) -> void:
 
 func _on_skeleton_body_player_enemy_collision() -> void:
 	print("Enemy bumped into payer!!!")
+	post_game_time = 0.4
+	lose_game.emit()
 	pass # Replace with function body.

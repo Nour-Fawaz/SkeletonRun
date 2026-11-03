@@ -10,14 +10,14 @@ func _ready() -> void:
 func _on_animation_changed() -> void:
 		
 	if animation == "jumpscare":
-		scale = Vector2(0.02, 0.02)
+		scale = Vector2(0.02, 0.02) # set scale smaller than walk animation
 		offset = Vector2(-200, 0) # move tetxure so that its centered
 		
 		var tween = create_tween() # create tween
 		tween.tween_property(self, "scale", target_scale, growth_duration) # make it grow to target
 		tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT) # to burst out into player face aggresively\
 	else:
-		offset = Vector2.ZERO
+		offset = Vector2.ZERO # reset offset
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
