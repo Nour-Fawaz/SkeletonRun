@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-
 const SPEED = 400.0
 const JUMP_VELOCITY = -400.0
 var normal_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var gravity_amplifier = 5.0
 
 @onready var pc_animated_sprite = $AnimatedSprite2D
+@onready var enemy = $"../Skeleton_Body"
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -36,3 +36,4 @@ func _physics_process(delta: float) -> void:
 		pc_animated_sprite.play("idle") # play idle animation
 
 	move_and_slide() # move character using built in physics
+		

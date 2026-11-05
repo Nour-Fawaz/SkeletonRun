@@ -25,8 +25,8 @@ func _physics_process(delta: float) -> void:
 		current_gravity = normal_gravity * gravity_amplifier
 	velocity.y += current_gravity * delta
 	move_and_slide()
-
-
+	
+	
 func _on_enemy_area_body_entered(body: Node2D) -> void:
 	skeleton_animated_sprite.play("jumpscare") # set jumpscare animation
 	player_enemy_collision.emit() # emit signal that there was a player and enemy collision

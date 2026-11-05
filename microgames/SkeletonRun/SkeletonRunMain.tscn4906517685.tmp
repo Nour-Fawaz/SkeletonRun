@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://dnlqqemy04dyd"]
+
+[ext_resource type="Script" uid="uid://dhk27xm1uaqs8" path="res://microgames/SkeletonRun/skeleton_run_main.gd" id="1_ksbh0"]
+[ext_resource type="PackedScene" uid="uid://ddhoio73023ba" path="res://scenes/main/bomb_timer/bomb_timer.tscn" id="1_v0hri"]
+[ext_resource type="Texture2D" uid="uid://dporqlie01e6l" path="res://microgames/SkeletonRun/Assets/Background.PNG" id="2_rnhtj"]
+[ext_resource type="PackedScene" uid="uid://vsa81qpfer44" path="res://microgames/SkeletonRun/PlayableCharacter/PlayableCharacter.tscn" id="4_jny1q"]
+[ext_resource type="PackedScene" uid="uid://drlyplm280yei" path="res://microgames/SkeletonRun/Skeleton/SkeletonCharacter.tscn" id="5_rnhtj"]
+[ext_resource type="PackedScene" uid="uid://c5xr1d8eohyg3" path="res://microgames/SkeletonRun/BlockPlatform/BlockPlatform.tscn" id="6_y62m4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vave0"]
+size = Vector2(18.342855, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgvo0"]
+size = Vector2(20, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf5ci"]
+size = Vector2(651, 20)
+
+[node name="SkeletonRunMain" type="Node2D" unique_id=679066593 node_paths=PackedStringArray("bomb_timer")]
+script = ExtResource("1_ksbh0")
+game_name = "SkeletonRun"
+creator_name = "Nour Fawaz"
+game_description = "Run from the skeleton "
+game_length = 10
+message = "RUN!"
+bomb_timer = NodePath("BombTimer")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1304183767]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=699872812]
+offset_right = 40.0
+offset_bottom = 40.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(300, 160)
+offset_transform_scale = Vector2(16.5, 16.5)
+mouse_filter = 2
+texture = ExtResource("2_rnhtj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BombTimer" parent="." unique_id=411462138 instance=ExtResource("1_v0hri")]
+position = Vector2(70, 350)
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1047420738]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1543439283]
+position = Vector2(318, 321)
+scale = Vector2(35, 2)
+shape = SubResource("RectangleShape2D_vave0")
+
+[node name="PC_Body" parent="." unique_id=1380460385 groups=["FollowPlayerAI"] instance=ExtResource("4_jny1q")]
+position = Vector2(304, 268)
+collision_layer = 2
+
+[node name="Skeleton_Body" parent="." unique_id=294971271 groups=["FollowPlayerAI"] instance=ExtResource("5_rnhtj")]
+position = Vector2(101, 268)
+SPEED = 180.0
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1674640483]
+metadata/_edit_group_ = true
+
+[node name="RightWall" type="CollisionShape2D" parent="Walls" unique_id=496494060]
+position = Vector2(650, 144)
+shape = SubResource("RectangleShape2D_rgvo0")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls" unique_id=1834923777]
+position = Vector2(-10, 144)
+shape = SubResource("RectangleShape2D_rgvo0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" unique_id=830810360]
+position = Vector2(315.5, -10)
+shape = SubResource("RectangleShape2D_qf5ci")
+
+[node name="BlockPlatform11" parent="." unique_id=1663281790 groups=["Platform3"] instance=ExtResource("6_y62m4")]
+position = Vector2(242, 225)
+
+[node name="BlockPlatform12" parent="." unique_id=470108753 groups=["Platform1"] instance=ExtResource("6_y62m4")]
+position = Vector2(265, 225)
+
+[node name="BlockPlatform13" parent="." unique_id=1907207891 groups=["Platform1", "Platform2"] instance=ExtResource("6_y62m4")]
+position = Vector2(288, 225)
+
+[node name="BlockPlatform21" parent="." unique_id=912234992 groups=["Platform2"] instance=ExtResource("6_y62m4")]
+position = Vector2(525, 229)
+
+[node name="BlockPlatform22" parent="." unique_id=1751275115 groups=["Platform2"] instance=ExtResource("6_y62m4")]
+position = Vector2(548, 229)
+
+[node name="BlockPlatform23" parent="." unique_id=2145346636 groups=["Platform2"] instance=ExtResource("6_y62m4")]
+position = Vector2(571, 229)
+
+[node name="BlockPlatform24" parent="." unique_id=1926199744 groups=["Platform3"] instance=ExtResource("6_y62m4")]
+position = Vector2(391, 165)
+
+[node name="BlockPlatform25" parent="." unique_id=435596010 groups=["Platform3"] instance=ExtResource("6_y62m4")]
+position = Vector2(414, 165)
+
+[node name="BlockPlatform26" parent="." unique_id=295246294 groups=["Platform3"] instance=ExtResource("6_y62m4")]
+position = Vector2(437, 165)
+
+[node name="BlockPlatform27" parent="." unique_id=12499669 groups=["Platform4"] instance=ExtResource("6_y62m4")]
+position = Vector2(102, 159)
+
+[node name="BlockPlatform28" parent="." unique_id=1980270571 groups=["Platform4"] instance=ExtResource("6_y62m4")]
+position = Vector2(125, 159)
+
+[node name="BlockPlatform29" parent="." unique_id=1981010960 groups=["Platform4"] instance=ExtResource("6_y62m4")]
+position = Vector2(148, 159)
+
+[connection signal="player_enemy_collision" from="Skeleton_Body" to="." method="_on_skeleton_body_player_enemy_collision"]

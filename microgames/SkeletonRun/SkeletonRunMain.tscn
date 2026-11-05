@@ -108,3 +108,5 @@ position = Vector2(125, 159)
 
 [node name="BlockPlatform29" parent="." unique_id=1981010960 groups=["Platform4"] instance=ExtResource("6_y62m4")]
 position = Vector2(148, 159)
+
+[connection signal="player_enemy_collision" from="Skeleton_Body" to="." method="_on_skeleton_body_player_enemy_collision"]

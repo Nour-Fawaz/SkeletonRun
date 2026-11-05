@@ -18,8 +18,3 @@ func _on_animation_changed() -> void:
 		tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT) # to burst out into player face aggresively
 	else:
 		offset = Vector2.ZERO # reset offset
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
