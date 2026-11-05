@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dporqlie01e6l" path="res://microgames/SkeletonRun/Assets/Background.PNG" id="2_rnhtj"]
 [ext_resource type="PackedScene" uid="uid://vsa81qpfer44" path="res://microgames/SkeletonRun/PlayableCharacter/PlayableCharacter.tscn" id="4_jny1q"]
 [ext_resource type="PackedScene" uid="uid://drlyplm280yei" path="res://microgames/SkeletonRun/Skeleton/SkeletonCharacter.tscn" id="5_rnhtj"]
+[ext_resource type="PackedScene" uid="uid://c5xr1d8eohyg3" path="res://microgames/SkeletonRun/BlockPlatform/BlockPlatform.tscn" id="6_y62m4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vave0"]
 size = Vector2(18.342855, 28)
@@ -54,7 +55,7 @@ position = Vector2(304, 268)
 collision_layer = 2
 
 [node name="Skeleton_Body" parent="." unique_id=294971271 groups=["FollowPlayerAI"] instance=ExtResource("5_rnhtj")]
-position = Vector2(100, 268)
+position = Vector2(101, 268)
 SPEED = 200.0
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=1674640483]
@@ -71,3 +72,39 @@ shape = SubResource("RectangleShape2D_rgvo0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" unique_id=830810360]
 position = Vector2(315.5, -10)
 shape = SubResource("RectangleShape2D_qf5ci")
+
+[node name="BlockPlatform11" parent="." unique_id=1663281790 groups=["Platform3"] instance=ExtResource("6_y62m4")]
+position = Vector2(242, 225)
+
+[node name="BlockPlatform12" parent="." unique_id=470108753 groups=["Platform1"] instance=ExtResource("6_y62m4")]
+position = Vector2(265, 225)
+
+[node name="BlockPlatform13" parent="." unique_id=1907207891 groups=["Platform1", "Platform2"] instance=ExtResource("6_y62m4")]
+position = Vector2(288, 225)
+
+[node name="BlockPlatform21" parent="." unique_id=912234992 groups=["Platform2"] instance=ExtResource("6_y62m4")]
+position = Vector2(525, 229)
+
+[node name="BlockPlatform22" parent="." unique_id=1751275115 groups=["Platform2"] instance=ExtResource("6_y62m4")]
+position = Vector2(548, 229)
+
+[node name="BlockPlatform23" parent="." unique_id=2145346636 groups=["Platform2"] instance=ExtResource("6_y62m4")]
+position = Vector2(571, 229)
+
+[node name="BlockPlatform24" parent="." unique_id=1926199744 groups=["Platform3"] instance=ExtResource("6_y62m4")]
+position = Vector2(391, 165)
+
+[node name="BlockPlatform25" parent="." unique_id=435596010 groups=["Platform3"] instance=ExtResource("6_y62m4")]
+position = Vector2(414, 165)
+
+[node name="BlockPlatform26" parent="." unique_id=295246294 groups=["Platform3"] instance=ExtResource("6_y62m4")]
+position = Vector2(437, 165)
+
+[node name="BlockPlatform27" parent="." unique_id=12499669 groups=["Platform4"] instance=ExtResource("6_y62m4")]
+position = Vector2(102, 159)
+
+[node name="BlockPlatform28" parent="." unique_id=1980270571 groups=["Platform4"] instance=ExtResource("6_y62m4")]
+position = Vector2(125, 159)
+
+[node name="BlockPlatform29" parent="." unique_id=1981010960 groups=["Platform4"] instance=ExtResource("6_y62m4")]
+position = Vector2(148, 159)

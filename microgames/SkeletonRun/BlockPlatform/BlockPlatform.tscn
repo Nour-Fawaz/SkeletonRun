@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c5xr1d8eohyg3"]
+
+[ext_resource type="Texture2D" uid="uid://btvdthaxih1wj" path="res://microgames/SkeletonRun/Assets/PlatformBlock.PNG" id="1_fvnno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgvo0"]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1907207891]
+z_index = -1
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=544215958]
+shape = SubResource("RectangleShape2D_rgvo0")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=462061797]
+scale = Vector2(0.012, 0.012)
+texture = ExtResource("1_fvnno")
