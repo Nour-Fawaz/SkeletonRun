@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://vsa81qpfer44" path="res://microgames/SkeletonRun/PlayableCharacter/PlayableCharacter.tscn" id="4_jny1q"]
 [ext_resource type="PackedScene" uid="uid://drlyplm280yei" path="res://microgames/SkeletonRun/Skeleton/SkeletonCharacter.tscn" id="5_rnhtj"]
 [ext_resource type="PackedScene" uid="uid://c5xr1d8eohyg3" path="res://microgames/SkeletonRun/BlockPlatform/BlockPlatform.tscn" id="6_y62m4"]
+[ext_resource type="AudioStream" uid="uid://coatf04uyyda5" path="res://microgames/SkeletonRun/Assets/jump_scare_audio.wav" id="7_nkxos"]
+[ext_resource type="AudioStream" uid="uid://b8h5n18ktd1vq" path="res://microgames/SkeletonRun/Assets/scary!.wav" id="8_7wg50"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vave0"]
 size = Vector2(18.342855, 28)
@@ -108,5 +110,12 @@ position = Vector2(125, 159)
 
 [node name="BlockPlatform29" parent="." unique_id=1981010960 groups=["Platform4"] instance=ExtResource("6_y62m4")]
 position = Vector2(148, 159)
+
+[node name="JumpscareAudio" type="AudioStreamPlayer2D" parent="." unique_id=170162179]
+stream = ExtResource("7_nkxos")
+
+[node name="GameAudio" type="AudioStreamPlayer2D" parent="." unique_id=1367263540]
+stream = ExtResource("8_7wg50")
+autoplay = true
 
 [connection signal="player_enemy_collision" from="Skeleton_Body" to="." method="_on_skeleton_body_player_enemy_collision"]

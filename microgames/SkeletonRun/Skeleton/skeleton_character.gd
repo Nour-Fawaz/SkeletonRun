@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -400.0
 var normal_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var skeleton_animated_sprite = $Skeleton_AnimatedSprite
 @onready var player = get_tree().get_first_node_in_group("FollowPlayerAI") # reference of player
+@onready var jumpscare_audio = $"../JumpscareAudio"
+@onready var game_music = $"../GameAudio"
 
 signal player_enemy_collision() # signal on enemy collision
 
@@ -28,6 +30,9 @@ func _physics_process(delta: float) -> void:
 	
 	
 func _on_enemy_area_body_entered(body: Node2D) -> void:
+	game_music.stop()
+	jumpscare_audio.play() # play jumpscare audio
+	await get_tree().create_timer(0.1).timeout # sync jumpscare audio with sprite
 	skeleton_animated_sprite.play("jumpscare") # set jumpscare animation
 	player_enemy_collision.emit() # emit signal that there was a player and enemy collision
 	
