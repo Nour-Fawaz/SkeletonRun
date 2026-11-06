@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 func _on_enemy_area_body_entered(body: Node2D) -> void:
-	game_music.stop()
+	game_music.stop() # stop playing game music
 	jumpscare_audio.play() # play jumpscare audio
 	await get_tree().create_timer(0.1).timeout # sync jumpscare audio with sprite
 	skeleton_animated_sprite.play("jumpscare") # set jumpscare animation
