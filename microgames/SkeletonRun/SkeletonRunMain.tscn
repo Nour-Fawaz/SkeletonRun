@@ -25,6 +25,7 @@ creator_name = "Nour Fawaz"
 game_description = "Run from the skeleton "
 game_length = 10
 message = "RUN!"
+control_type = 1
 bomb_timer = NodePath("BombTimer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1304183767]
@@ -58,7 +59,7 @@ collision_layer = 2
 
 [node name="Skeleton_Body" parent="." unique_id=294971271 groups=["FollowPlayerAI"] instance=ExtResource("5_rnhtj")]
 position = Vector2(101, 268)
-SPEED = 200.0
+SPEED = 190.0
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=1674640483]
 metadata/_edit_group_ = true
