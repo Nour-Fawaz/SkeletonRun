@@ -17,3 +17,13 @@ mono_crash.*.json
 
 # example project
 microgames/knight_game/
+
+# Only include source code developed by me
+scenes/
+.gitattributes
+export_presets.cfg
+icon.png
+icon.png.import
+project.godot
+.godothub/
+.gitignore
